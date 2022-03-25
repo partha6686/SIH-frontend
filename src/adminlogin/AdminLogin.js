@@ -6,12 +6,12 @@ import '../../node_modules/bootstrap/dist/css/bootstrap.min.css';
 const AdminLogin = () =>{
     const [val,setVal] = useState({
         password: '',
-        phone:'',
+        username:'',
       });
     
       const change = (event) =>{
-        console.log(event.target.value)
-        console.log(event.target.name)
+        // console.log(event.target.value)
+        // console.log(event.target.name)
         const value = event.target.value;
         const nameq = event.target.name;
     
@@ -37,9 +37,9 @@ const AdminLogin = () =>{
 
             <form className="form_main" onSubmit={calling}>
                     
-                    <input type="phone" placeholder="Phone Number" onChange={change} name={val.phone}/>
+                    <input type="text" placeholder="Username" onChange={change} value={val.phone} name="username" />
                     <br></br>
-                    <input type="Password" placeholder="Password" onChange={change} name={val.password}/>
+                    <input type="Password" placeholder="Password" onChange={change} value={val.password} name="password" />
                     <br></br>
                     <NavLink exact activeClassName="active_class" to='/afterlogin'><button type="submit" className="btn btn-primary">LOGIN</button></NavLink>
             </form>
